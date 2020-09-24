@@ -154,7 +154,6 @@
       class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
       data-target="#navigation"
     >
-      {{ width }}
       <i class="material-icons">menu</i>
     </button>
     <div
