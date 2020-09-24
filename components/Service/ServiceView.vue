@@ -1,74 +1,51 @@
 <template>
   <div
     @click="isActive = !isActive"
-    class="service border-black border-2 flex flex-col h-24 justify-center items-center rounded-md m-1"
-    :class="{ expand: isActive }"
+    class="servicecontainer border-black border-2 flex flex-col h-24 justify-center items-center rounded-md m-1"
+    :class="{ active: isActive }"
   >
-    <p class="text-2xl text-gray-900 font-bold">
+    <p
+      class="serviceheader text-2xl text-gray-900 font-bold"
+      :class="{ active: isActive }"
+    >
       {{ text }}
     </p>
-    <p
-      class="text-gray-900 opacity-0 hidden invisible"
-      :class="{ fadein: isActive }"
-    >
+    <p class="serviceinformation text-gray-900" :class="{ active: isActive }">
       <slot></slot>
     </p>
   </div>
 </template>
 
 <style>
-.service {
-  animation: 0.75s forwards ease shrink-service;
+.servicecontainer {
+  position: relative;
+  width: 30%;
+  transform: rotateZ(0deg);
+  transition: 0.5s transform, 0.5s width 0.5s;
 }
 
-.expand {
-  animation: 0.75s forwards ease expand-service;
+.servicecontainer.active {
+  width: 100%;
+  transform: rotateZ(360deg);
 }
 
-.fadein {
-  animation: 0.3s ease 0.75s forwards change-opacity;
-  display: block;
+.serviceheader {
+  position: relative;
+  transform: translateY(0);
 }
 
-@keyframes change-opacity {
-  0% {
-    opacity: 0;
-    visibility: visible;
-  }
-  100% {
-    opacity: 1;
-    visibility: visible;
-  }
+.serviceinformation {
+  position: relative;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s height 1s, 0s visibility 1s, 0.5s opacity 1s;
 }
 
-@keyframes expand-service {
-  0% {
-    transform: rotateZ(0deg);
-    width: 30%;
-  }
-  60% {
-    transform: rotateZ(359deg);
-    width: 30%;
-  }
-  100% {
-    transform: rotateZ(360deg);
-    width: 100%;
-  }
-}
-
-@keyframes shrink-service {
-  0% {
-    transform: rotateZ(360deg);
-    width: 100%;
-  }
-  60% {
-    transform: rotateZ(0deg);
-    width: 100%;
-  }
-  100% {
-    transform: rotateZ(0deg);
-    width: 30%;
-  }
+.serviceinformation.active {
+  height: 100%;
+  visibility: visible;
+  opacity: 1;
 }
 </style>
 
