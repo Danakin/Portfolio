@@ -2,7 +2,7 @@
   <a
     :href="target"
     target="_blank"
-    class="h-16 px-4 lg:px-1 inline-flex items-center hover:bg-blue-800"
+    class="svgimg h-16 px-4 lg:px-1 inline-flex items-center hover:bg-blue-200 lg:border-b-4 border-blue-700"
   >
     <svg
       role="img"
@@ -15,6 +15,19 @@
     </svg>
   </a>
 </template>
+
+<style>
+svg {
+  stroke: #fff;
+  stroke-width: 0px;
+  fill: #fff;
+}
+
+.svgimg:hover svg path,
+.svgimg:hover {
+  fill: #2c5282;
+}
+</style>
 
 <script lang="ts">
 import Vue from "vue";
