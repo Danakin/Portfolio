@@ -20,6 +20,7 @@ export default Vue.extend({});
 .container {
   position: relative;
   margin: 0 auto;
+  margin-top: 64px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
