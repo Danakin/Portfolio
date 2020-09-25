@@ -9,7 +9,7 @@
         >Name:</label
       >
       <input
-        class="block w-full bg-gray-100 border-2 border-gray-100 text-gray-800 py-1 px-3 focus:border-blue-300"
+        class="block w-full bg-gray-100 border-b-2 border-gray-600 text-gray-800 py-1 px-3 focus:border-blue-300"
         type="text"
         name="name"
         v-model="name"
@@ -21,7 +21,7 @@
         E-Mail:
       </label>
       <input
-        class="block w-full bg-gray-100 border-2 border-gray-100 text-gray-800 py-1 px-3 focus:border-blue-300"
+        class="block w-full bg-gray-100 border-b-2 border-gray-600 text-gray-800 py-1 px-3 focus:border-blue-300"
         type="text"
         name="_replyto"
         v-model="email"
@@ -33,7 +33,7 @@
         Nachricht:
       </label>
       <textarea
-        class="block w-full bg-gray-100 border-2 border-gray-100 text-gray-800 py-1 px-3 focus:border-blue-300"
+        class="block w-full bg-gray-100 border-b-2 border-gray-600 text-gray-800 py-1 px-3 focus:border-blue-300"
         name="message"
         v-model="message"
         rows="10"
