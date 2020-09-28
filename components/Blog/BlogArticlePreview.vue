@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-    class="flex flex-row items-center"
+    class="mx-2 flex flex-col sm:flex-row items-center"
   >
     <img :src="img" class="h-32" alt="" />
     <div class="ml-4">

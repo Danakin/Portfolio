@@ -57,6 +57,7 @@
       </svg>
     </a>
     <NavigationHamburger
+      :isActive="isActive"
       @hamburgerClicked="hamburgerClicked"
     ></NavigationHamburger>
     <div
