@@ -57,19 +57,20 @@
       </svg>
     </a>
     <NavigationHamburger
-      @hamburgerClicked="isActive = !isActive"
+      @hamburgerClicked="hamburgerClicked"
     ></NavigationHamburger>
     <div
-      class="menu w-full flex flex-col justify-end lg:flex-row lg:inline-flex lg:flex-grow lg:w-auto bg-blue-600 lg:bg-opacity-0 lg:visible lg:opacity-100"
+      class="menu w-full flex flex-col overflow-y-auto lg:overflow-y-hidden lg:justify-end lg:flex-row lg:inline-flex lg:flex-grow lg:w-auto bg-blue-600 lg:bg-opacity-0 lg:visible lg:opacity-100"
       :class="{
-        invisible: isActive,
-        'opacity-0': isActive,
-        'opacity-100': !isActive,
+        invisible: !isActive,
+        'opacity-0': !isActive,
+        'opacity-100': isActive,
+        active: isActive,
       }"
       id="navigation"
     >
-      <NavigationLink target="#">Services</NavigationLink>
-      <NavigationLink target="#">Blog</NavigationLink>
+      <NavigationLink target="/#">Services</NavigationLink>
+      <NavigationLink target="/blog">Blog</NavigationLink>
       <NavigationLink target="#">Projekte</NavigationLink>
       <NavigationLink target="#">Pakete</NavigationLink>
       <NavigationLink target="#">Kontakt</NavigationLink>
@@ -134,6 +135,13 @@ nav {
 .menu {
   transition: all 0.25s ease;
 }
+
+.menu.active {
+  overflow-y: auto;
+  position: fixed;
+  top: 64px;
+  bottom: 0;
+}
 </style>
 
 <script lang="ts">
@@ -141,7 +149,7 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      isActive: true,
+      isActive: false,
       width: 1650,
     };
   },
@@ -155,6 +163,20 @@ export default Vue.extend({
   methods: {
     changeWidth() {
       this.width = window.innerWidth;
+    },
+    hamburgerClicked() {
+      this.isActive = !this.isActive;
+      // document.body.style.overflow = this.isActive ? "hidden" : "auto";
+    },
+  },
+  watch: {
+    $route() {
+      this.isActive = false;
+      document.body.style.overflow = "auto";
+    },
+    isActive(enabled, prev_state) {
+      // Watch isActive element and hide or show body scroll bar
+      document.body.style.overflow = enabled ? "hidden" : "auto";
     },
   },
 });

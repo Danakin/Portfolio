@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar></Navbar>
-    <Nuxt />
+    <Nuxt class="content" />
   </div>
 </template>
 
@@ -24,6 +24,10 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.content {
+  margin-top: 64px;
 }
 </style>
 

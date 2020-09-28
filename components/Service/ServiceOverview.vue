@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full flex flex-row justify-center content-center flex-wrap relative"
+    class="container mx-auto w-full flex flex-row justify-center content-center flex-wrap relative"
   >
     <ServiceView text="Mobile Friendly">
       Meine Seiten sind 100% responsive, und fuktionieren sowohl auf dem
