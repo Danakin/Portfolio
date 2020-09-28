@@ -1,25 +1,32 @@
 <template>
   <div
+    class="w-full servicecontainer relative md:w-1/2 lg:w-1/3 p-4"
+    :class="{
+      active: isActive,
+    }"
     @click="isActive = !isActive"
-    class="servicecontainer border-black border-2 flex flex-col h-24 justify-center items-center rounded-md m-1"
-    :class="{ active: isActive }"
   >
-    <p
-      class="serviceheader text-2xl text-gray-900 font-bold"
-      :class="{ active: isActive }"
+    <div
+      class="serviceitem flex flex-col justify-center items-center"
+      :class="{
+        active: isActive,
+      }"
     >
-      {{ text }}
-    </p>
-    <p class="serviceinformation text-gray-900" :class="{ active: isActive }">
-      <slot></slot>
-    </p>
+      <p
+        class="serviceheader text-2xl text-gray-900 font-bold"
+        :class="{ active: isActive }"
+      >
+        {{ text }}
+      </p>
+      <p class="serviceinformation text-gray-900" :class="{ active: isActive }">
+        <slot></slot>
+      </p>
+    </div>
   </div>
 </template>
 
 <style>
 .servicecontainer {
-  position: relative;
-  width: 30%;
   transform: rotateZ(0deg);
   transition: 0.5s transform, 0.5s width 0.5s;
 }
@@ -29,9 +36,26 @@
   transform: rotateZ(360deg);
 }
 
+.serviceitem {
+  border-bottom: 4px solid black;
+  border-left: 0;
+  transition: 1s border, 1s background, 1s height;
+  height: 75px;
+}
+.serviceitem.active {
+  border-left: 4px solid black;
+  border-bottom: 0;
+  background: rgb(237, 242, 247);
+  min-height: 125px;
+  height: auto;
+}
+
 .serviceheader {
   position: relative;
-  transform: translateY(0);
+  transition: 1s all;
+}
+.serviceheader.active {
+  text-transform: uppercase;
 }
 
 .serviceinformation {
@@ -43,8 +67,8 @@
 }
 
 .serviceinformation.active {
-  height: 100%;
   visibility: visible;
+  height: auto;
   opacity: 1;
 }
 </style>

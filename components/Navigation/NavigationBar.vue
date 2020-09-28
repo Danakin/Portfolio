@@ -71,9 +71,9 @@
     >
       <NavigationLink target="/#">Services</NavigationLink>
       <NavigationLink target="/blog">Blog</NavigationLink>
-      <NavigationLink target="#">Projekte</NavigationLink>
-      <NavigationLink target="#">Pakete</NavigationLink>
-      <NavigationLink target="#">Kontakt</NavigationLink>
+      <NavigationLink target="/#">Projekte</NavigationLink>
+      <NavigationLink target="/#">Pakete</NavigationLink>
+      <NavigationLink target="/#contact">Kontakt</NavigationLink>
 
       <div
         class="h-16 px-1 w-full lg:w-auto inline-flex justify-center items-center"
