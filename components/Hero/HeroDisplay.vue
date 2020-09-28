@@ -3,7 +3,7 @@
     class="relative w-full bg-blue-400 hero"
     style=""
     :style="{
-      'background-image': 'url(' + require('@/assets/imgs/heromain.jpg') + ')',
+      'background-image': 'url(' + imgSrc + ')',
     }"
   >
     <div class="slogan">
@@ -26,11 +26,12 @@
   right: 50px;
   min-width: 300px;
   height: 300px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-flow: column;
   justify-content: center;
   text-align: center;
+  padding: 16px;
 }
 
 h1 {

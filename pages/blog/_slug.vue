@@ -1,18 +1,18 @@
 <template>
-  <article class="mx-auto container">
-    <section class="pt-4">
+  <article>
+    <HeroDisplay :imgSrc="img">
       <h1 class="text-4xl">{{ article.title }}</h1>
       <div class="border-l-4 border-gray-200 pl-4">
         {{ article.description }}
       </div>
+      <p class="italic">
+        by {{ article.author }} on: {{ formatDate(article.updatedAt) }}
+        {{ article.updated ? " (updated)" : "" }}
+      </p>
+    </HeroDisplay>
+    <section class="mx-auto container mt-6">
+      <nuxt-content :document="article" class="mx-2" />
     </section>
-    <img :src="article.img" :alt="article.alt" />
-    <p class="italic">
-      by {{ article.author }} on: {{ formatDate(article.updatedAt) }}
-      {{ article.updated ? " (updated)" : "" }}
-    </p>
-
-    <nuxt-content :document="article" class="mx-2" />
   </article>
 </template>
 
@@ -29,11 +29,20 @@
 
 <script>
 export default {
+  data() {
+    return {
+      testlink: require("~/assets/imgs/heromain.jpg"),
+    };
+  },
   async asyncData({ $content, params }) {
     // fetch our article here
     const article = await $content("articles", params.slug).fetch();
-
     return { article };
+  },
+  computed: {
+    img() {
+      return require(`../../assets/imgs/${this.article.img}`);
+    },
   },
   methods: {
     formatDate(date) {

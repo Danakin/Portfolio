@@ -1,7 +1,8 @@
 ---
 title: Testing Nuxt.js Markdown Blogging
 description: Creating a nuxt.js blog!
-img: first-blog-post.jpg
+img: blog/first-blog-post.jpg
+imgsm: blog/first-blog-post_sm.jpg
 alt: my first blog post
 author: Danny Festor
 ---

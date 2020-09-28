@@ -6,16 +6,7 @@
       v-for="article of articles"
       :key="article.slug"
     >
-      <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-        <img :src="article.img" />
-        <div>
-          <h2 class="font-bold">{{ article.title }}</h2>
-          <p class="italic">
-            by {{ article.author }} on {{ formatDate(article.updatedAt) }}
-          </p>
-          <p>{{ article.description }}</p>
-        </div>
-      </NuxtLink>
+      <BlogArticlePreview :article="article"></BlogArticlePreview>
     </article>
   </section>
 </template>
@@ -34,6 +25,7 @@ export default {
         "title",
         "description",
         "img",
+        "imgsm",
         "slug",
         "author",
         "createdAt",
@@ -46,12 +38,6 @@ export default {
     return {
       articles,
     };
-  },
-  methods: {
-    formatDate(date) {
-      const options = { year: "numeric", month: "long", day: "numeric" };
-      return new Date(date).toLocaleDateString("en", options);
-    },
   },
 };
 </script>

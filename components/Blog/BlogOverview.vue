@@ -4,7 +4,7 @@
       :to="{ name: 'blog-slug', params: { slug: article.slug } }"
       class="w-full block rounded shadow-lg border-l-4 border-blue-400 bg-white"
     >
-      <img :src="article.img" />
+      <img :src="img" />
       <div>
         <h2 class="font-bold">{{ article.title }}</h2>
         <p>{{ article.description }}</p>
@@ -16,5 +16,11 @@
 <script>
 export default {
   props: ["article"],
+  computed: {
+    img() {
+      // return this.article.imgsm;
+      return require(`../../assets/imgs/${this.article.imgsm}`);
+    },
+  },
 };
 </script>

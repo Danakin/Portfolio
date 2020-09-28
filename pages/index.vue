@@ -1,6 +1,6 @@
 <template>
   <section>
-    <HeroDisplay imgSrc="@/assets/imgs/heromain.jpg">
+    <HeroDisplay :imgSrc="require('~/assets/imgs/heromain.jpg')">
       <h1>Moderne Homepages nach Maß.</h1>
       <h2>Deutsch, Englisch und Japanisch.</h2>
       <h2>Interkulturell.</h2>
@@ -39,6 +39,7 @@ export default Vue.extend({
         "title",
         "description",
         "img",
+        "imgsm",
         "slug",
         "author",
         "createdAt",
