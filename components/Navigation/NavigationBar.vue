@@ -136,11 +136,13 @@ nav {
   transition: all 0.25s ease;
 }
 
-.menu.active {
-  overflow-y: auto;
-  position: fixed;
-  top: 64px;
-  bottom: 0;
+@media (max-width: 1024px) {
+  .menu.active {
+    overflow-y: auto;
+    position: fixed;
+    top: 64px;
+    bottom: 0;
+  }
 }
 </style>
 

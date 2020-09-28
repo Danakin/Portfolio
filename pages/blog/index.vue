@@ -33,7 +33,6 @@ export default {
       ])
       .sortBy("createdAt", "desc")
       .fetch();
-    console.log("Articles", articles);
 
     return {
       articles,
