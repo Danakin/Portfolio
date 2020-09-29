@@ -1,7 +1,7 @@
 <template>
   <section
     id="technologies"
-    class="flex flex-row flex-wrap justify-center items-center py-8"
+    class="flex flex-row flex-wrap justify-center items-center py-16"
   >
     <h2 class="text-2xl w-full" @click="extended = !extended">
       Technologien

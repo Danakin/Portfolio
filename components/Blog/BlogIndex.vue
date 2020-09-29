@@ -1,5 +1,5 @@
 <template>
-  <section id="blogs" class="py-12 bg-gray-200 w-full">
+  <section id="blogs" class="py-16 bg-gray-200 w-full">
     <section class="w-full">
       <nuxt-link to="blog" class="text-2xl">Neueste Beiträge im Blog</nuxt-link>
     </section>

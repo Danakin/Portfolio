@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full md:w-2/3 px-4 md:px-0" id="contact">
+  <div class="relative w-full md:w-2/3 px-4 py-16 md:px-0" id="contact">
     <p class="text-4xl font-semibold">Kontakt</p>
 
     <form @submit.prevent="submitForm">

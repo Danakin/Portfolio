@@ -1,7 +1,7 @@
 <template>
   <section
     id="projects"
-    class="bg-gray-200 py-12 w-full flex flex-row flex-wrap justify-evenly items-center"
+    class="bg-gray-200 py-16 w-full flex flex-row flex-wrap justify-evenly items-center"
   >
     <div class="w-full"><h2 class="text-2xl">Meine Projekte</h2></div>
     <ProjectCard

@@ -1,7 +1,7 @@
 <template>
   <div
     id="services"
-    class="container mx-auto w-full flex flex-row justify-center content-center flex-wrap relative py-12 bg-white"
+    class="container mx-auto w-full flex flex-row justify-center content-center flex-wrap relative py-16 bg-white"
   >
     <ServiceView text="Mobile Friendly">
       Meine Seiten sind 100% responsive, und fuktionieren sowohl auf dem
