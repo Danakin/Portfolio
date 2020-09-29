@@ -10,6 +10,7 @@
     >
       <ServiceIndex></ServiceIndex>
       <BlogIndex :articles="articles"></BlogIndex>
+      <TechnologiesIndex></TechnologiesIndex>
       <ProjectIndex></ProjectIndex>
       <ContactForm class="py-12"></ContactForm>
     </section>

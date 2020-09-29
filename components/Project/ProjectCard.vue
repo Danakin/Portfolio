@@ -2,7 +2,7 @@
   <article class="w-full md:w-1/2 lg:w-1/3 p-8">
     <a :href="url" target="_blank">
       <div
-        class="w-full border-l-4 border-blue-400 flex flex-row justify-center items-center md:flex-col md:pb-4 bg-blue-200 projectcard"
+        class="w-full border-l-4 border-blue-400 flex flex-row justify-center items-center md:flex-col md:pb-4 bg-gray-100 projectcard"
       >
         <div
           v-if="imgSrc"
