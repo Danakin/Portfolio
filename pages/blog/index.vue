@@ -13,7 +13,7 @@
 
 <style>
 .blogoverview {
-  @apply border-l-4 bg-gray-200 border-blue-400 m-2 pl-2;
+  @apply border-l-4 bg-gray-400 border-blue-400 m-2;
 }
 </style>
 

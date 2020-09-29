@@ -29,6 +29,7 @@
 .servicecontainer {
   transform: rotateZ(0deg);
   transition: 0.5s transform, 0.5s width 0.5s;
+  cursor: pointer;
 }
 
 .servicecontainer.active {

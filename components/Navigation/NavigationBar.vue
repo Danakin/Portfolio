@@ -72,8 +72,8 @@
     >
       <NavigationLink target="/#">Services</NavigationLink>
       <NavigationLink target="/blog">Blog</NavigationLink>
-      <NavigationLink target="/#">Projekte</NavigationLink>
-      <NavigationLink target="/#">Pakete</NavigationLink>
+      <NavigationLink target="/#technologies">Technologien</NavigationLink>
+      <NavigationLink target="/#projects">Projekte</NavigationLink>
       <NavigationLink target="/#contact">Kontakt</NavigationLink>
 
       <div

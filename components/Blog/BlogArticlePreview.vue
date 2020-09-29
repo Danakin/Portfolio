@@ -1,9 +1,9 @@
 <template>
   <NuxtLink
     :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-    class="mx-2 flex flex-col sm:flex-row items-center"
+    class="flex flex-col sm:flex-row items-center"
   >
-    <img :src="img" class="h-32" alt="" />
+    <img :src="img" class="m-0 h-32" alt="" />
     <div class="ml-4">
       <h2 class="font-bold">{{ article.title }}</h2>
       <p class="italic">
