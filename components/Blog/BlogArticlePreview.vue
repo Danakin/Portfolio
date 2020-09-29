@@ -1,10 +1,12 @@
 <template>
   <NuxtLink
     :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-    class="flex flex-col items-center border-l-4 border-blue-400 bg-gray-200 sm:flex-row blogarticle"
+    class="flex flex-col sm:flex-row items-center border-l-4 border-blue-400 bg-gray-200 blogarticle"
   >
-    <img :src="img" class="m-0 h-32" alt="" />
-    <div class="ml-4">
+    <div class="w-auto">
+      <img :src="img" class="w-full m-0 h-32" alt="" />
+    </div>
+    <div class="ml-4 flex-1">
       <h2 class="font-bold">{{ article.title }}</h2>
       <p class="italic">
         by {{ article.author }} on {{ formatDate(article.updatedAt) }}
