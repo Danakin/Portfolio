@@ -1,14 +1,14 @@
 <template>
   <article>
     <HeroDisplay :imgSrc="img">
-      <h1 class="text-4xl">{{ article.title }}</h1>
-      <div class="border-l-4 border-gray-200 pl-4">
+      <template #headline>{{ article.title }}</template>
+      <template #text>
         {{ article.description }}
-      </div>
-      <p class="italic">
+      </template>
+      <template #author>
         by {{ article.author }} on: {{ formatDate(article.updatedAt) }}
         {{ article.updated ? " (updated)" : "" }}
-      </p>
+      </template>
     </HeroDisplay>
     <section class="mx-auto container mt-6">
       <nuxt-content :document="article" class="mx-2" />

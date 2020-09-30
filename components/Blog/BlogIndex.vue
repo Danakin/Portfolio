@@ -1,7 +1,21 @@
+<i18n>
+{
+  "en": {
+    "headline": "Newest Blog Entries"
+  },
+  "de": {
+    "headline": "Neueste Beiträge im Blog"
+  },
+  "ja": {
+    "headline": "最新のブログエントリー"
+  }
+}
+</i18n>
+
 <template>
   <section id="blogs" class="py-16 bg-gray-200 w-full">
     <section class="w-full">
-      <nuxt-link to="blog" class="text-2xl">Neueste Beiträge im Blog</nuxt-link>
+      <nuxt-link to="blog" class="text-2xl">{{ $t("headline") }}</nuxt-link>
     </section>
     <section
       class="container mx-auto flex flex-row flex-wrap w-full justify-evenly"

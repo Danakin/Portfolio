@@ -7,7 +7,9 @@
     }"
   >
     <div class="slogan">
-      <slot></slot>
+      <h2 class="text-3xl"><slot name="headline"></slot></h2>
+      <p class="text-xl"><slot name="text"></slot></p>
+      <p class="text-xl italic"><slot name="author"></slot></p>
     </div>
   </section>
 </template>
@@ -22,16 +24,21 @@
 }
 .slogan {
   position: absolute;
-  top: 50px;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
   right: 50px;
-  min-width: 300px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.9);
+  min-width: 100px;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.8);
   display: flex;
   flex-flow: column;
   justify-content: center;
   text-align: center;
-  padding: 16px;
+  padding: 32px;
 }
 
 h1 {

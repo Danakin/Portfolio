@@ -1,9 +1,25 @@
+<i18n>
+{
+  "en": { 
+    "headline": "Modern Homepages to fit your need", 
+    "text": "German, English, Japanese"
+  },
+  "de": {
+    "headline": "Moderne Homepages nach Maß.",
+    "text": "Deutsch, Englisch und Japanisch."
+  },
+  "ja": {
+    "headline": "ピッタリなホームページ",
+    "text": "日本語、英語、ドイツ語."
+  }
+}
+</i18n>
+
 <template>
   <section>
     <HeroDisplay :imgSrc="require('~/assets/imgs/heromain.jpg')">
-      <h1>Moderne Homepages nach Maß.</h1>
-      <h2>Deutsch, Englisch und Japanisch.</h2>
-      <h2>Interkulturell.</h2>
+      <template #headline>{{ $t("headline") }}</template>
+      <template #text>{{ $t("text") }}</template>
     </HeroDisplay>
     <section
       class="relative my-0 mx-auto flex flex-col justify-center items-center text-center"

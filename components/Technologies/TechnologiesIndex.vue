@@ -1,10 +1,24 @@
+<i18n>
+{
+  "en": {
+    "headline": "Technologies"
+  },
+  "de": {
+    "headline": "Technologien"
+  },
+  "ja": {
+    "headline": "使う技術"
+  }
+}
+</i18n>
+
 <template>
   <section
     id="technologies"
     class="flex flex-row flex-wrap justify-center items-center py-16"
   >
-    <h2 class="text-2xl w-full" @click="extended = !extended">
-      Technologien
+    <h2 class="text-2xl w-full cursor-pointer" @click="extended = !extended">
+      {{ $t("headline") }}
       <i class="arrow" :class="{ down: !extended, up: extended }"></i>
     </h2>
     <TechnologiesCard width="90" bgColor="#e34f26" :extended="extended">

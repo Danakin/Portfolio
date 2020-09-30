@@ -16,10 +16,10 @@
         class="serviceheader text-2xl text-gray-900 font-bold"
         :class="{ active: isActive }"
       >
-        {{ text }}
+        <slot name="headline"></slot>
       </p>
       <p class="serviceinformation text-gray-900" :class="{ active: isActive }">
-        <slot></slot>
+        <slot name="content"></slot>
       </p>
     </div>
   </div>
@@ -76,7 +76,6 @@
 
 <script>
 export default {
-  props: ["text"],
   data() {
     return {
       isActive: false,
