@@ -39,5 +39,8 @@ export default Vue.extend({
   components: {
     Navbar: Navbar,
   },
+  mounted() {
+    document.cookie = "test=test;_cookie=wow";
+  },
 });
 </script>

@@ -13,8 +13,8 @@
       <slot name="path"></slot>
     </svg>
     <div v-if="extended" class="ml-2 flex-1 flex relative">
-      <div class="absolute percentage">{{ width }}%</div>
-      <div class="absolute technology"><slot name="title"></slot></div>
+      <div class="percentage">{{ width }}%</div>
+      <div class="technology"><slot name="title"></slot></div>
       <div
         class="progress"
         :style="{ width: width + '%', background: bgColor }"
@@ -29,18 +29,28 @@
 
 <style>
 .percentage {
+  position: absolute;
   top: 50%;
   left: 50%;
   padding: 2px;
   background: rgba(255, 255, 255, 0.6);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
 
 .technology {
+  position: absolute;
   top: 50%;
   margin-left: 4px;
   padding: 2px;
   background: rgba(255, 255, 255, 0.6);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
