@@ -38,10 +38,18 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ["@nuxtjs/axios", "@nuxt/content"],
+  modules: ["@nuxtjs/axios", "@nuxt/content", 'nuxt-i18n'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
 
-  axios: {}
+  axios: {},
+  i18n: {
+    vueI18nLoader: true,
+    locales: ['de', 'en', 'ja'],
+    defaultLocale: 'de',
+    vueI18n: {
+      fallbackLocale: 'en',
+    }
+  }
 };
