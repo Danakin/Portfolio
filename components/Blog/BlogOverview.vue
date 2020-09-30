@@ -1,7 +1,7 @@
 <template>
   <article class="w-full md:w-1/2 lg:w-1/3 px-8 py-2">
     <NuxtLink
-      :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+      :to="localePath({ name: 'blog-slug', params: { slug: article.slug } })"
       class="w-full flex flex-col justify-center items-center border-l-4 border-blue-400 bg-white blogcard hover:shadow-lg"
     >
       <div class="w-full">

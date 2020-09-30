@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+    :to="localePath({ name: 'blog-slug', params: { slug: article.slug } })"
     class="flex flex-col sm:flex-row items-center border-l-4 border-blue-400 bg-gray-200 blogarticle"
   >
     <div class="w-auto">

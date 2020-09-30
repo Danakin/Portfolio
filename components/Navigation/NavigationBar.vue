@@ -156,20 +156,20 @@
           <img
             src="../../assets/flag/united-kingdom-flag-square-small.jpg"
             alt=""
-            class="h-6 w-8"
+            class="h-8 w-8"
           />
         </nuxt-link>
         <nuxt-link :to="switchLocalePath('de')">
           <img
             src="../../assets/flag/germany-flag-square-small.jpg"
             alt=""
-            class="h-6 w-6 ml-1"
+            class="h-8 w-8 ml-1"
         /></nuxt-link>
         <nuxt-link :to="switchLocalePath('ja')">
           <img
             src="../../assets/flag/japan-flag-square-small.jpg"
             alt=""
-            class="h-6 w-6 ml-1"
+            class="h-8 w-8 ml-1"
         /></nuxt-link>
       </div>
     </div>
