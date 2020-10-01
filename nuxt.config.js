@@ -48,8 +48,9 @@ export default {
     vueI18nLoader: true,
     locales: ['de', 'en', 'ja'],
     defaultLocale: 'de',
+    detectBrowserLanguage: true,
     vueI18n: {
-      fallbackLocale: 'en',
+      fallbackLocale: 'en'
     }
   }
 };
