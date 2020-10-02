@@ -24,10 +24,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [{
-    src: "~/plugins/vue-google-analytics",
-    mode: "client"
-  }],
+  plugins: [],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -41,7 +38,7 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ["@nuxtjs/axios", "@nuxt/content", 'nuxt-i18n'],
+  modules: ["@nuxtjs/axios", "@nuxt/content", "nuxt-i18n", "@nuxtjs/google-analytics"],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
@@ -55,5 +52,23 @@ export default {
     vueI18n: {
       fallbackLocale: 'en'
     }
+  },
+  googleAnalytics: {
+    id: "UA-169387423-1",
+    disabled: () => {
+      const getGDPR = window.localStorage.getItem("GDPR:accepted");
+      if (typeof getGDPR !== null && getGDPR === "no") {
+        return true;
+      }
+      if (typeof getGDPR !== null && getGDPR === "yes") {
+        return false;
+      }
+      return true;
+    },
+    //Remove debug before deployment
+    debug: {
+      enabled: true,
+      sendHitTask: true,
+    },
   }
 };
