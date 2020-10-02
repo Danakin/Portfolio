@@ -1,6 +1,9 @@
 <template>
   <div>
     <Navbar></Navbar>
+    <client-only>
+      <CookieDialog></CookieDialog>
+    </client-only>
     <Nuxt class="content" />
   </div>
 </template>
@@ -39,8 +42,6 @@ export default Vue.extend({
   components: {
     Navbar: Navbar,
   },
-  mounted() {
-    document.cookie = "test=test;_cookie=wow";
-  },
+  mounted() {},
 });
 </script>
