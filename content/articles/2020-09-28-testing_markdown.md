@@ -5,6 +5,7 @@ img: blog/first-blog-post.jpg
 imgsm: blog/first-blog-post_sm.jpg
 alt: my first blog post
 author: Danny Festor
+tags: html laravel nodejs javascript
 ---
 
 # Testing Markdown Blogging

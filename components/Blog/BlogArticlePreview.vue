@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="localePath({ name: 'blog-slug', params: { slug: article.slug } })"
-    class="flex flex-col sm:flex-row items-center border-l-4 border-blue-400 bg-gray-200 blogarticle"
+    class="flex flex-col sm:flex-row items-center border-l-4 border-blue-400 bg-gray-200 mt-1 blogarticle"
   >
     <div class="w-auto">
       <img :src="img" class="w-full m-0 h-32" alt="" />
@@ -18,7 +18,7 @@
 
 <style>
 .blogarticle {
-  transition: 0.5s all ease;
+  transition: 0.25s all ease;
 }
 .blogarticle:hover {
   transform: scale(1.05);

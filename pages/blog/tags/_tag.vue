@@ -5,8 +5,8 @@
     <article class="w-full md:w-9/12 p-2 order-3 md:order-2">
       <BlogArticlePreview
         v-for="article of articles"
-        :article="article"
         :key="article.slug"
+        :article="article"
       ></BlogArticlePreview>
     </article>
   </section>
@@ -29,6 +29,7 @@ export default {
         "tags",
       ])
       .sortBy("createdAt", "desc")
+      .where({ tags: { $contains: params.tag } })
       .fetch();
     articles.forEach((article) => {
       const taglist = article.tags.split(" ");
@@ -36,9 +37,12 @@ export default {
     });
 
     return {
-      articles,
+      articles: articles.filter((v) => v.tags.includes(params.tag)),
       tags: tags.filter((v, i, a) => a.indexOf(v) === i).sort(),
     };
+  },
+  mounted() {
+    console.log(this.params);
   },
 };
 </script>
