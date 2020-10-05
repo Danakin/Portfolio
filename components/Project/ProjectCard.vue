@@ -47,7 +47,7 @@
 }
 .projectcard:hover {
   @apply bg-blue-100;
-  transform: rotateY(360deg) scale(1.1);
+  transform: scale(1.1);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
