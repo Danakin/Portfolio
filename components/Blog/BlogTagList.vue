@@ -4,7 +4,7 @@
       class="mb-2 cursor-pointer md:cursor-default w-full"
       @click="extended = !extended"
     >
-      Tags {{ width }}
+      Tags
       <i
         v-if="width < 768"
         class="arrow"
