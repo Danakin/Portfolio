@@ -15,19 +15,34 @@
     <div v-if="extended" class="ml-2 flex-1 flex relative">
       <div class="percentage">{{ width }}%</div>
       <div class="technology"><slot name="title"></slot></div>
-      <div
-        class="progress"
-        :style="{ width: width + '%', background: bgColor }"
-      ></div>
-      <div
-        class="progress bg-gray-300"
-        :style="{ width: 100 - width + '%' }"
-      ></div>
+      <div class="progresscontainer flex">
+        <div
+          class="progress"
+          :style="{ width: width + '%', background: bgColor }"
+        ></div>
+        <div
+          class="progress bg-gray-300"
+          :style="{ width: 100 - width + '%' }"
+        ></div>
+      </div>
     </div>
   </div>
 </template>
 
 <style>
+.progress {
+  height: 100%;
+}
+
+.progresscontainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  right: 0;
+  z-index: 1;
+}
+
 .percentage {
   position: absolute;
   top: 50%;
@@ -39,6 +54,7 @@
   -moz-transform: translateX(-50%) translateY(-50%);
   -o-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
 }
 
 .technology {
@@ -52,6 +68,7 @@
   -moz-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
+  z-index: 2;
 }
 
 .technologycard {
@@ -61,10 +78,6 @@
 
 .technologycard svg {
   width: 30px;
-}
-
-.progress {
-  height: 30px;
 }
 </style>
 
