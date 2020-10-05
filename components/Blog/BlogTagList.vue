@@ -4,7 +4,7 @@
       class="mb-2 cursor-pointer md:cursor-default w-full"
       @click="extended = !extended"
     >
-      Tags
+      Tags {{ width }}
       <i
         v-if="width < 768"
         class="arrow"
@@ -12,7 +12,7 @@
       ></i>
     </p>
     <transition name="fade">
-      <ul v-if="extended || width > 768" class="w-full">
+      <ul v-if="extended || width >= 768" class="w-full">
         <li>
           <NuxtLink
             :to="localePath({ name: 'blog' })"
