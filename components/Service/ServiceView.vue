@@ -41,6 +41,7 @@
   height: 75px;
   z-index: 2;
   background: rgb(225, 234, 243);
+  transition: 0.3s all;
 }
 
 .servicecontainer:hover .serviceitem {
