@@ -36,6 +36,9 @@
         </li>
       </ul>
     </section>
+    <section>
+      {{ tags }}
+    </section>
   </section>
 </template>
 

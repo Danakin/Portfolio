@@ -4,7 +4,7 @@
     class="flex flex-col sm:flex-row items-center border-l-4 border-blue-400 bg-gray-200 mt-1 blogarticle"
   >
     <div class="w-auto">
-      <img :src="img" class="w-full m-0 h-32" alt="" />
+      <img :src="img" class="w-auto m-0 h-32" alt="" />
     </div>
     <div class="ml-4 flex-1">
       <h2 class="font-bold">{{ article.title }}</h2>
