@@ -11,12 +11,7 @@
         :class="{ down: !extended, up: extended }"
       ></i>
     </p>
-    <section
-      class="taglist"
-      :class="{
-        active: extended || width >= 768,
-      }"
-    >
+    <section class="taglist" v-if="extended || width > 768">
       <ul class="w-full">
         <li>
           <NuxtLink
@@ -42,35 +37,13 @@
   </section>
 </template>
 
-<style>
-.taglist {
-  transition: 0.2s all ease-in-out;
-  -moz-transform: scaleY(0);
-  -ms-transform: scaleY(0);
-  -o-transform: scaleY(0);
-  -webkit-transform: scaleY(0);
-  transform: scaleY(0);
-  height: 0;
-  opacity: 0;
-}
-.taglist.active {
-  -moz-transform: scaleY(100%);
-  -ms-transform: scaleY(100%);
-  -o-transform: scaleY(100%);
-  -webkit-transform: scaleY(100%);
-  transform: scaleY(100%);
-  height: auto;
-  opacity: 1;
-}
-</style>
-
 <script>
 export default {
   props: ["tags"],
   data() {
     return {
       extended: false,
-      width: 0,
+      width: 800,
     };
   },
   methods: {
