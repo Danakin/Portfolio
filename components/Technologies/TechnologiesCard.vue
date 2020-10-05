@@ -79,10 +79,13 @@
 .technologycard {
   transition: 0.3s all ease-in-out;
   margin: 2px 0;
+  height: 30px;
 }
 
 .technologycard svg {
+  height: 30px;
   width: 30px;
+  display: block;
 }
 </style>
 
