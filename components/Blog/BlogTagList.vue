@@ -11,8 +11,8 @@
         :class="{ down: !extended, up: extended }"
       ></i>
     </p>
-    <section class="taglist" v-if="extended || width > 768">
-      <ul class="w-full">
+    <transition name="fade">
+      <ul v-if="extended || width > 768" class="w-full">
         <li>
           <NuxtLink
             :to="localePath({ name: 'blog' })"
@@ -30,12 +30,19 @@
           </NuxtLink>
         </li>
       </ul>
-    </section>
-    <section>
-      {{ tags }}
-    </section>
+    </transition>
   </section>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>
 
 <script>
 export default {
