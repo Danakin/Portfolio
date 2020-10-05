@@ -1,6 +1,9 @@
 <template>
   <section class="w-full md:w-3/12 border-t-2 border-blue-400 p-2">
-    <p class="mb-2 cursor-pointer w-full" @click="extended = !extended">
+    <p
+      class="mb-2 cursor-pointer md:cursor-default w-full"
+      @click="extended = !extended"
+    >
       Tags
       <i
         v-if="width < 768"

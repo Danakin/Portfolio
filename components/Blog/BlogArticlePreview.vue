@@ -12,6 +12,11 @@
         by {{ article.author }} on {{ formatDate(article.updatedAt) }}
       </p>
       <p>{{ article.description }}</p>
+      <p class="text-right">
+        <span v-for="tag in tags" :key="tag" class="mr-1" :class="tag"
+          >#{{ tag }}</span
+        >
+      </p>
     </div>
   </NuxtLink>
 </template>
@@ -23,6 +28,43 @@
 .blogarticle:hover {
   transform: scale(1.05);
   @apply shadow-lg;
+}
+
+.html {
+  color: #e34f26;
+}
+.css {
+  color: #1572b6;
+}
+.tailwindcss {
+  color: #38b2ac;
+}
+.javascript {
+  color: #bda916;
+}
+.nodejs {
+  color: #339933;
+}
+.vuejs {
+  color: #4fc08d;
+}
+.nuxtjs {
+  color: #00c58e;
+}
+.php {
+  color: #777bb4;
+}
+.laravel {
+  color: #ff2d20;
+}
+.postgresql {
+  color: #336791;
+}
+.python {
+  color: #3776ab;
+}
+.tensorflow {
+  color: #ff6f00;
 }
 </style>
 
@@ -38,6 +80,9 @@ export default {
   computed: {
     img() {
       return require(`../../assets/imgs/${this.article.imgsm}`);
+    },
+    tags() {
+      return this.article.tags.split(" ");
     },
   },
 };
