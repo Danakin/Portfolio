@@ -12,10 +12,10 @@
       <title><slot name="title">Icon Title</slot> Icon</title>
       <slot name="path"></slot>
     </svg>
-    <div v-if="extended" class="ml-2 flex-1 flex relative">
+    <div v-if="extended" class="ml-2 flex-1 flex relative progresscontainer">
       <div class="percentage">{{ width }}%</div>
       <div class="technology"><slot name="title"></slot></div>
-      <div class="progresscontainer flex">
+      <div class="progressbar flex">
         <div
           class="progress"
           :style="{ width: width + '%', background: bgColor }"
@@ -35,12 +35,17 @@
 }
 
 .progresscontainer {
+  position: relative;
+  height: 30px;
+  z-index: 1;
+}
+
+.progressbar {
   position: absolute;
   top: 0;
   left: 0;
-  height: 30px;
   right: 0;
-  z-index: 1;
+  bottom: 0;
 }
 
 .percentage {
