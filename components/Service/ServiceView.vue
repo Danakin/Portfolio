@@ -30,7 +30,6 @@
 
 .servicecontainer:hover {
   transform: scale(1.05);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .servicecontainer:hover.active {
@@ -41,11 +40,16 @@
   position: relative;
   height: 75px;
   z-index: 2;
+  background: rgb(225, 234, 243);
+}
+
+.servicecontainer:hover .serviceitem {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .servicecontainer .serviceitem::before {
   position: absolute;
-  bottom: 0%;
+  bottom: -4px;
   left: 0;
   height: 4px;
   width: 100%;
@@ -57,6 +61,7 @@
 
 .servicecontainer.active .serviceitem::before {
   width: 4px;
+  bottom: 0;
   height: 100%;
   transition: 0.3s width 0.3s, 0.3s height 0.6s;
 }
