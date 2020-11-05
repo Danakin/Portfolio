@@ -4,11 +4,17 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: "portfolio",
+    title: "Brücke - Moderne Homepages",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Ihre Brücke ins Internet: Homepages nach Maß. Schnell, modern, und schön. Auf Deutsch, Englisch und Japanisch"
+      },
+      { hid: "tags", name: "tags" }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
@@ -38,20 +44,32 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ["@nuxtjs/axios", "@nuxt/content", "nuxt-i18n", "@nuxtjs/google-analytics"],
+  modules: [
+    "@nuxtjs/axios",
+    "@nuxt/content",
+    "nuxt-i18n",
+    "@nuxtjs/google-analytics",
+    "@nuxtjs/sitemap"
+  ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
 
   axios: {},
   i18n: {
+    baseUrl: "https://www.festor.info/",
     vueI18nLoader: true,
-    locales: ['de', 'en', 'ja'],
-    defaultLocale: 'de',
+    locales: [
+      { code: "de", iso: "de-DE" },
+      { code: "en", iso: "en-US" },
+      { code: "ja", iso: "ja-JP" }
+    ],
+    defaultLocale: "de",
     detectBrowserLanguage: true,
     vueI18n: {
-      fallbackLocale: 'en'
-    }
+      fallbackLocale: "en"
+    },
+    seo: true
   },
   googleAnalytics: {
     id: "UA-169387423-1",
@@ -68,7 +86,15 @@ export default {
     //Remove debug before deployment
     debug: {
       enabled: true,
-      sendHitTask: true,
-    },
+      sendHitTask: true
+    }
+  },
+  sitemap: {
+    hostname: "https://www.festor.info",
+    i18n: true,
+    i18n: {
+      locales: ["de", "en", "ja"],
+      routesNameSeparator: "___"
+    }
   }
 };
