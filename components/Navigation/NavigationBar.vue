@@ -43,7 +43,6 @@
             .b {
               fill: none;
               stroke: #fff;
-              stroke-miterlimit: 10;
               stroke-width: 2.08px;
             }
           </style>
