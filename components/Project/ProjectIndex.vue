@@ -57,7 +57,7 @@
       <h2 class="text-2xl">{{ $t("headline") }}</h2>
     </div>
     <ProjectCard
-      url="https://agitated-minsky-91e9bd.netlify.app/"
+      url="https://spatzinderhand.netlify.app/"
       imgSrc="projects/spatz_sm.png"
     >
       <template #headline>{{ $t("sparrow.headline") }}</template>
