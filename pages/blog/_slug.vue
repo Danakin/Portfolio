@@ -18,7 +18,11 @@
 
 <style>
 .nuxt-content h1 {
-  @apply text-3xl;
+  @apply text-3xl font-bold;
+}
+
+.nuxt-content h2 {
+  @apply text-xl font-bold mt-8;
 }
 
 .nuxt-content pre {

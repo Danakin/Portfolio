@@ -1,16 +1,16 @@
 <i18n>
 {
-  "en": { 
-    "headline": "Modern Homepages to fit your need", 
-    "text": "German, English, Japanese"
+  "en": {
+    "headline": "Freelance Fullstack Development",
+    "text": "Laravel or Node.js with Vue.js"
   },
   "de": {
-    "headline": "Moderne Homepages nach Maß.",
-    "text": "Deutsch, Englisch und Japanisch."
+    "headline": "Freelance Fullstack Entwicklung.",
+    "text": "Laravel oder Node.js mit Vue.js"
   },
   "ja": {
-    "headline": "ピッタリなホームページ",
-    "text": "日本語、英語、ドイツ語."
+    "headline": "フルスタックのフリーランサー",
+    "text": "Vue.jsを利用してLaravelやNode.js"
   }
 }
 </i18n>
@@ -21,15 +21,16 @@
       <template #headline>{{ $t("headline") }}</template>
       <template #text>{{ $t("text") }}</template>
     </HeroDisplay>
-    <section
+    <main
       class="relative my-0 mx-auto flex flex-col justify-center items-center text-center"
     >
+      <About></About>
       <ServiceIndex></ServiceIndex>
       <BlogIndex :articles="articles"></BlogIndex>
       <TechnologiesIndex></TechnologiesIndex>
       <ProjectIndex></ProjectIndex>
       <ContactForm class="py-12"></ContactForm>
-    </section>
+    </main>
   </section>
 </template>
 

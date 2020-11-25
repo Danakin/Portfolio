@@ -7,7 +7,7 @@
     }"
   >
     <div class="slogan">
-      <h2 class="text-3xl"><slot name="headline"></slot></h2>
+      <h1 class="text-3xl"><slot name="headline"></slot></h1>
       <p class="text-xl"><slot name="text"></slot></p>
       <p class="text-xl italic"><slot name="author"></slot></p>
     </div>
