@@ -1,31 +1,49 @@
 <template>
-  <article class="w-full md:w-1/2 lg:w-1/3 p-8">
+  <article class="px-8 py-2 projectcard">
     <a :href="url" target="_blank">
       <div
-        class="w-full border-l-4 border-blue-400 flex flex-row justify-center items-center md:flex-col md:pb-4 bg-gray-100 projectcard"
+        class="flex-col border-l-4 border-blue-400 flex justify-center items-center bg-gray-100"
       >
         <div
-          v-if="imgSrc"
-          class="w-full flex flex-row justify-center items-center"
+          class="w-full flex justify-between p-4 hover:bg-gray-200"
+          @click.prevent="open = !open"
         >
-          <img :src="img" />
-        </div>
-        <div>
           <h2 class="text-xl font-bold">
             <slot name="headline">The Headline</slot>
           </h2>
-          <p class="px-4">
-            <slot name="text">The Text</slot>
-          </p>
+          <div>
+            <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"
+                v-if="open"
+              />
+              <path
+                fill="currentColor"
+                d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                v-else
+              />
+            </svg>
+          </div>
+        </div>
+        <div v-if="open" class="flex flex-row flex-wrap px-4 py-2">
+          <div v-if="imgSrc" class="w-full flex justify-center sm:w-3/12">
+            <img :src="img" class="h-24" />
+          </div>
+          <div class="w-full" :class="{ 'sm:w-9/12': imgSrc }">
+            <p class="px-4">
+              <slot name="text">The Text</slot>
+            </p>
+          </div>
           <a
             v-if="github"
-            class="flex justify-end pr-4"
+            class="w-full sm:w-3/12 flex justify-center items-center gitlink"
             :href="github"
             target="_blank"
           >
             <svg
               role="img"
-              height="32"
+              height="64"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -35,6 +53,18 @@
               />
             </svg>
           </a>
+          <div
+            class="flex flex-wrap justify-center sm:justify-end w-full"
+            :class="{ 'sm:w-9/12': github }"
+          >
+            <div
+              v-for="technology in technologies"
+              :key="technology"
+              class="mr-2 my-1 p-2 bg-gray-200 rounded border border-blue-500"
+            >
+              #{{ technology }}
+            </div>
+          </div>
         </div>
       </div>
     </a>
@@ -42,35 +72,13 @@
 </template>
 
 <style>
-.projectcard {
-  transition: 0.3s all ease-in-out;
-}
-.projectcard:hover {
-  @apply bg-blue-100;
-  transform: scale(1.1);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-}
-
-.projectcard img {
-  display: block;
-  position: relative;
-  max-height: 200px;
-  width: auto;
-  height: auto;
-}
-
-.projectcard a {
-  @apply p-4;
-}
-
-.projectcard svg {
+.gitlink svg {
   stroke: #000;
   stroke-width: 0px;
   fill: #000;
 }
 
-.projectcard a:hover svg path,
-.a:hover {
+.gitlink:hover svg path {
   fill: #2c5282;
 }
 </style>
@@ -78,7 +86,12 @@
 <script lang="ts">
 import Vue from "vue";
 export default Vue.extend({
-  props: ["url", "github", "imgSrc"],
+  props: ["url", "github", "imgSrc", "technologies"],
+  data() {
+    return {
+      open: false,
+    };
+  },
   computed: {
     img() {
       if (this.imgSrc) return require("../../assets/imgs/" + this.imgSrc);

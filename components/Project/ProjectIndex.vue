@@ -6,6 +6,10 @@
       "headline": "SpatzInDerHand.de",
       "text": "SpatzInDerHand stands for sustainable video production. The owner has accumulated years of industry experience before concentrating on going climate neutral"
     },
+    "brueckecms": {
+      "headline": "BrueckeCMS",
+      "text": "This will become a small Laravel powered Wordpress clone. Obviously a fresh CMS can't hope to match Wordpresses functionality, but for users who only need base functionality this will become an alternative"
+    },
     "ekistamp": {
       "headline": "Ekistamp Station-Stamp-Collection",
       "text": "The japanese People love collecting things. Nearly every Japan Railways station has a commemorative stamp to celebrate one's visiting the station. This application works as a small social network for stamp collectors."
@@ -24,6 +28,10 @@
     "sparrow": {
       "headline": "SpatzInDerHand.de",
       "text": "SpatzInDerHand steht für nachhaltige Videoproduktion. Gestützt wird das ganze durch jahrelange Industrie-Erfahrung"
+    },
+    "brueckecms": {
+      "headline": "BrückeCMS",
+      "text": "Dieses Projekt zielt darauf ab irgendwann ein kleiner Wordpress-Klon zu werden. Natürlich sind neue Solo-Projekte nicht in der Lage mit dem Vorbild mitzuhalten, aber dieses Projekt wird irgendwann einfach Befürdnisse befriedigen können."
     },
     "ekistamp": {
       "headline": "Ekistamp Bahnhof-Stempel-Sammlung",
@@ -44,6 +52,10 @@
       "headline": "SpatzInDerHand.de",
       "text": "SpatzInDerHandの動画作成の中心はサステナビリティである。 オーナーは長年の業界経験を積んできた後、気候の中立性を重視しています。"
     },
+    "brueckecms": {
+      "headline": "ブリュッケCMS",
+      "text": "小さなワードプレスのクローンになるアプリです。本アプリはもちろん、ワードプレスの機能のライバルになれませんが、ワードプレスはパワフルすぎる場合に使えるアプリになる予定です。"
+    },
     "ekistamp": {
       "headline": "駅スタンプSNS",
       "text": "人間が物を集めることが好きです. JRの各駅は記念スタンプがあるので、集める人もいます。本サイトはスタンプを集める人のためのSNSになります。"
@@ -63,21 +75,45 @@
 <template>
   <section
     id="projects"
-    class="bg-gray-200 py-16 w-full flex flex-row flex-wrap justify-evenly items-center"
+    class="bg-gray-200 py-16 w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 content-center justify-center"
   >
-    <div class="w-full">
+    <div class="md:col-span-2 xl:col-span-3">
       <h2 class="text-2xl">{{ $t("headline") }}</h2>
     </div>
     <ProjectCard
       url="https://spatzinderhand.netlify.app/"
       imgSrc="projects/spatz_sm.png"
+      :technologies="['vuejs', 'nuxtjs', 'tailwindcss']"
     >
       <template #headline>{{ $t("sparrow.headline") }}</template>
       <template #text>{{ $t("sparrow.text") }}</template>
     </ProjectCard>
     <ProjectCard
+      url="https://brueckecms.herokuapp.com/"
+      imgSrc="projects/brueckecms.png"
+      github="https://github.com/Danakin/BrueckeCMS"
+      :technologies="[
+        'Laravel',
+        'Livewire',
+        'PostgreSQL',
+        'TailwindCSS',
+        'AlpineJS',
+      ]"
+    >
+      <template #headline>{{ $t("brueckecms.headline") }}</template>
+      <template #text>{{ $t("brueckecms.text") }}</template>
+    </ProjectCard>
+    <ProjectCard
       url="https://ekistamp.herokuapp.com/"
       imgSrc="projects/ekistamp.png"
+      github="https://github.com/Danakin/Ekistamp"
+      :technologies="[
+        'Laravel',
+        'Livewire',
+        'PostgreSQL',
+        'TailwindCSS',
+        'AlpineJS',
+      ]"
     >
       <template #headline>{{ $t("ekistamp.headline") }}</template>
       <template #text>{{ $t("ekistamp.text") }}</template>
@@ -85,6 +121,13 @@
     <ProjectCard
       url="http://www.mamenoki.ed.jp/"
       imgSrc="projects/mamenoki.png"
+      :technologies="[
+        'Electron.js',
+        'Vue.js',
+        'SQLite',
+        'TailwindCSS',
+        'Sequelize',
+      ]"
     >
       <template #headline>{{ $t("mamenoki.headline") }}</template>
       <template #text>{{ $t("mamenoki.text") }}</template>
