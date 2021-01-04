@@ -50,6 +50,52 @@
     id="services"
     class="container mx-auto w-full flex flex-row justify-center content-center flex-wrap relative py-16 bg-white"
   >
+    <h2 class="w-full text-2xl font-bold">Services</h2>
+
+    <a href="#contact" class="w-full md:w-1/2 lg:w-1/3 p-2">
+      <div class="shadow rounded">
+        <strong class="text-2xl">Ihr Traumprojekt</strong>
+        <p>
+          Sie haben eine Idee, und eine Vorstellung was die Umsetzung betrifft?
+          Kontaktieren Sie mich, um einen individuellen Kostenvoranschlag
+          passend zu ihrem Budget und Projekt zu erhalten.
+        </p>
+        <em>Kostenvoranschläge sind grundsätzlich detailliert und fair.</em>
+      </div>
+    </a>
+
+    <a href="#contact" class="w-full md:w-1/2 lg:w-1/3 p-2">
+      <div class="shadow rounded">
+        <strong class="text-2xl">Kostenlose Beratung</strong>
+        <p>
+          Sie wissen nicht, wie Sie ihre Idee umsetzen sollen? Ich berate Sie
+          gerne und empfehle Ihnen, mit welchen Technologien Ihr Projekt am
+          besten Umgesetzt werden kann.
+        </p>
+        <em>
+          Die erste Stunde ist kostenlos. Beratung möglich über Skype, Zoom,
+          Discord oder was für Sie am Besten ist.
+        </em>
+      </div>
+    </a>
+
+    <a href="#contact" class="w-full md:w-1/2 lg:w-1/3 p-2">
+      <div class="shadow rounded">
+        <strong class="text-2xl">Zukunftssicher</strong>
+        <p>
+          Ihr Projekt ist fertig, aber sie machen sich Sorgen um die
+          Langfristigkeit? Wer kümmert sich um Sicherupdates, und dass alles wie
+          geschmiert läuft?
+        </p>
+        <em>
+          Kontaktieren Sie mich um einen individuellen Wartungsvertrag zu
+          diskutieren!
+        </em>
+      </div>
+    </a>
+
+    <h2 class="w-full text-2xl font-bold mt-4">Webseiten von Bruecke sind</h2>
+
     <ServiceView text="">
       <template #headline>{{ $t("responsive.headline") }}</template>
       <template #content>{{ $t("responsive.content") }}</template>
