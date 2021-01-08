@@ -21,6 +21,10 @@
     "laravelblog": {
       "headline": "Laravel Blog Software",
       "text": "Custom made Laravel 8 Blogging software"
+    },
+    "nextshop": {
+      "headline": "Next.js Ecommerce",
+      "text": "Codealong to the Tutorial Series E-Commerce Platform in 25 days, complete with Shopping Cart and Stripe Checkout"
     }
   },
   "de": {
@@ -44,6 +48,10 @@
     "laravelblog": {
       "headline": "Laravel Blog Software",
       "text": "Eine eigens erstellte Blogging Plattform in Laravel 8 und PHP 7"
+    },
+    "nextshop": {
+      "headline": "Next.js Ecommerce",
+      "text": "Codealong zur Tutorial Serie E-Commerce Platform in 25 days Test, komplett mit Shopping Cart und Stripe Checkout"
     }
   },
   "ja": {
@@ -67,6 +75,10 @@
     "laravelblog": {
       "headline": "Laravelブログソフト",
       "text": "Laravel 8で作ったブログソフト。"
+    },
+    "nextshop": {
+      "headline": "Next.js ショップ",
+      "text": "E-Commerce Platform in 25 daysというチュートリアルシリーズのコードコピー。Stripeを利用して支払いまでできます。"
     }
   }
 }
@@ -132,7 +144,29 @@
       <template #headline>{{ $t("mamenoki.headline") }}</template>
       <template #text>{{ $t("mamenoki.text") }}</template>
     </ProjectCard>
-    <ProjectCard github="https://github.com/Danakin/LaravelBlog">
+    <ProjectCard
+      url="https://modest-thompson-3edc93.netlify.app/"
+      imgSrc="projects/nextjs-store.png"
+      github="https://github.com/Danakin/next-app/tree/main/next-app"
+      :technologies="['Next.js', 'React.js', 'Stripe']"
+    >
+      <template #headline>{{ $t("nextshop.headline") }}</template>
+      <template #text>
+        <p>
+          {{ $t("nextshop.text") }}
+        </p>
+        <a
+          href="https://github.com/dijonmusters/e-commerce-in-25-days"
+          class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 my-2 block"
+          target="_blank"
+          >Visit the Tutorial</a
+        >
+      </template>
+    </ProjectCard>
+    <ProjectCard
+      github="https://github.com/Danakin/Laravel8BlogFortify"
+      :technologies="['Laravel', 'Tailwind.css']"
+    >
       <template #headline>{{ $t("laravelblog.headline") }}</template>
       <template #text>{{ $t("laravelblog.text") }}</template>
     </ProjectCard>
