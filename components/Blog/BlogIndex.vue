@@ -65,12 +65,12 @@
         </div>
       </form>
     </section>
-    <section class="mt-16 max-w-2xl mx-auto px-4">
+    <section class="mt-16 max-w-2xl mx-auto px-4" v-if="success">
       <article class="bg-green-200 border-l-4 border-green-600 p-2">
         Almost there! Check your inbox to confirm your E-mail address!
       </article>
     </section>
-    <section class="mt-16 max-w-2xl mx-auto px-4">
+    <section class="mt-16 max-w-2xl mx-auto px-4" v-if="error">
       <article class="bg-red-200 border-l-4 border-red-600 p-2">
         Something went wrong... {{ error_message }}
       </article>
