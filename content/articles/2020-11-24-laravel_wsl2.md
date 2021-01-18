@@ -1,11 +1,12 @@
 ---
 title: "Laravel + WSL2: Setting Up a Development Environment"
+date: 2021-01-18T03:46:55.911Z
 description: Laravel Development Under Windows
-img: blog/2020-11-24-windows-terminal.png
-imgsm: blog/2020-11-24-windows-terminal_sm.png
+img: /img/2020-11-24-windows-terminal.png
 alt: my first blog post
-author: Danny Festor
+imgsm: /img/2020-11-24-windows-terminal_sm.png
 tags: laravel
+author: Danny Festor
 ---
 
 # Laravel in WSL2
