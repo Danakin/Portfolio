@@ -1,6 +1,6 @@
 <template>
   <article>
-    <HeroDisplay :imgSrc="img">
+    <HeroDisplay :imgSrc="article.img">
       <template #headline>{{ article.title }}</template>
       <template #text>
         {{ article.description }}
@@ -35,18 +35,12 @@
 export default {
   data() {
     return {
-      testlink: require("~/assets/imgs/heromain.jpg"),
     };
   },
   async asyncData({ $content, params }) {
     // fetch our article here
     const article = await $content("articles", params.slug).fetch();
     return { article };
-  },
-  computed: {
-    img() {
-      return require(`../../assets/imgs/${this.article.img}`);
-    },
   },
   methods: {
     formatDate(date) {

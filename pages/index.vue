@@ -17,7 +17,7 @@
 
 <template>
   <section>
-    <HeroDisplay :imgSrc="require('~/assets/imgs/heromain.jpg')">
+    <HeroDisplay imgSrc="img/heromain.jpg">
       <template #headline>{{ $t("headline") }}</template>
       <template #text>{{ $t("text") }}</template>
     </HeroDisplay>
