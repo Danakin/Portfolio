@@ -5,7 +5,7 @@
       class="w-full flex flex-col justify-center items-center border-l-4 border-blue-400 bg-white blogcard hover:shadow-lg"
     >
       <div class="w-full">
-        <img class="w-full" :src="article.imgsm" />
+        <img class="w-full" :src="img" />
       </div>
       <div>
         <h2 class="font-bold">{{ article.title }}</h2>
@@ -28,5 +28,11 @@
 <script>
 export default {
   props: ["article"],
+  computed: {
+    img() {
+      // return this.article.imgsm;
+      return require(`../../assets/imgs/${this.article.imgsm}`);
+    },
+  },
 };
 </script>

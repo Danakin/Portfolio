@@ -17,13 +17,13 @@
 
 <template>
   <section>
+    <HeroDisplay :imgSrc="require('~/assets/imgs/heromain.jpg')">
+      <template #headline>{{ $t("headline") }}</template>
+      <template #text>{{ $t("text") }}</template>
+    </HeroDisplay>
     <main
       class="relative my-0 mx-auto flex flex-col justify-center items-center text-center"
     >
-      <HeroDisplay imgSrc="/img/heromain.jpg">
-        <template #headline>{{ $t("headline") }}</template>
-        <template #text>{{ $t("text") }}</template>
-      </HeroDisplay>
       <About></About>
       <ServiceIndex></ServiceIndex>
       <BlogIndex :articles="articles"></BlogIndex>
@@ -33,6 +33,7 @@
     </main>
   </section>
 </template>
+
 
 <script lang="ts">
 import Vue from "vue";
@@ -49,23 +50,16 @@ export default Vue.extend({
         "slug",
         "author",
         "createdAt",
-        "updatedAt"
+        "updatedAt",
       ])
       .sortBy("createdAt", "desc")
       .limit(3)
       .fetch();
 
     return {
-      articles
+      articles,
     };
   },
-  head() {
-    return {
-      script: [
-        { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
-      ]
-    };
-  }
 });
 </script>
 

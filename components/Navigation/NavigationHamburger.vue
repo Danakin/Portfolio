@@ -46,7 +46,7 @@ export default Vue.extend({
   methods: {
     hamburgerClicked() {
       this.$emit("hamburgerClicked");
-    }
-  }
+    },
+  },
 });
 </script>
