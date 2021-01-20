@@ -24,7 +24,6 @@
 }
 </i18n>
 
-
 <template>
   <nav class="flex items-center bg-blue-700 flex-wrap fixed">
     <a class="pl-3" href="#">
@@ -114,7 +113,7 @@
         invisible: !isActive,
         'opacity-0': !isActive,
         'opacity-100': isActive,
-        active: isActive,
+        active: isActive
       }"
       id="navigation"
     >
@@ -226,7 +225,7 @@ export default Vue.extend({
   data() {
     return {
       isActive: false,
-      width: 1650,
+      width: 1650
     };
   },
   mounted() {
@@ -243,7 +242,7 @@ export default Vue.extend({
     hamburgerClicked() {
       this.isActive = !this.isActive;
       // document.body.style.overflow = this.isActive ? "hidden" : "auto";
-    },
+    }
   },
   watch: {
     $route() {
@@ -253,7 +252,7 @@ export default Vue.extend({
     isActive(enabled, prev_state) {
       // Watch isActive element and hide or show body scroll bar
       document.body.style.overflow = enabled ? "hidden" : "auto";
-    },
-  },
+    }
+  }
 });
 </script>

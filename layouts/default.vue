@@ -40,8 +40,8 @@ import Vue from "vue";
 import Navbar from "~/components/Navigation/NavigationBar.vue";
 export default Vue.extend({
   components: {
-    Navbar: Navbar,
+    Navbar: Navbar
   },
-  mounted() {},
+  mounted() {}
 });
 </script>
